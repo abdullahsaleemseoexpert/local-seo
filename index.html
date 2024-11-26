@@ -102,21 +102,35 @@
         }
 
         /* Portfolio Section */
-        #portfolio .carousel {
-            display: flex;
-            overflow-x: scroll;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+#portfolio .carousel {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center; /* Center-aligns the images */
+}
 
-        #portfolio .carousel img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+#portfolio .carousel img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px; /* Add some spacing around the images */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #portfolio .carousel {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+    }
+
+    #portfolio .carousel img {
+        width: 80%; /* Adjust image width on mobile */
+        margin: 10px auto; /* Center images and add spacing */
+    }
+}
+
 
         /* Contact Form */
         #contact form {
