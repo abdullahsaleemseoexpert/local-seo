@@ -86,12 +86,14 @@
             align-items: center;
             justify-content: center;
             background-color: #fff;
+            flex-wrap: wrap; /* Added for responsiveness */
         }
 
         #about-me img {
             max-width: 300px;
             border-radius: 50%;
             margin-left: 20px;
+            margin-top: 20px; /* Added for spacing on mobile */
         }
 
         #about-me p {
@@ -104,11 +106,14 @@
             display: flex;
             overflow-x: scroll;
             gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         #portfolio .carousel img {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -182,10 +187,37 @@
         @media (max-width: 768px) {
             #about-me {
                 flex-direction: column;
+                text-align: center;
+            }
+
+            #about-me img {
+                margin-left: 0;
             }
 
             #portfolio .carousel {
                 flex-direction: column;
+            }
+
+            #portfolio .carousel img {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 2em; /* Adjusted font size for smaller screens */
+            }
+
+            section {
+                padding: 40px 20px; /* Reduced padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em; /* Further reduced font size for very small screens */
+            }
+
+            .quote {
+                font-size: 1em; /* Adjust quote font size */
             }
         }
     </style>
@@ -245,24 +277,30 @@
             <img src="https://www.upwork.com/att/download/portfolio/persons/uid/1573931732458344448/profile/projects/files/4090bf18-8ede-40ba-aa7c-986ec35f2933" alt="Dericks Mobile Detailing">
             <img src="https://www.upwork.com/att/download/portfolio/persons/uid/1573931732458344448/profile/projects/files/4b93644c-f38b-4e9d-9633-5691826f5d12" alt="Dericks Mobile Detailing">
             <img src="https://www.upwork.com/att/download/portfolio/persons/uid/1573931732458344448/profile/projects/files/221cb367-3693-487d-ae48-d54c8683ded5" alt="Dericks Mobile Detailing">
-            <!-- Additional portfolio images go here -->
+            <!-- Additional portfolio images -->
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <form action="mailto:abdullahsaleem12570@gmail.com" method="post" enctype="text/plain">
+        <form action="#" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
         </form>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <p>© 2024 Abdullah Saleem. All rights reserved.</p>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 Abdullah Saleem</p>
     </footer>
 </body>
 
